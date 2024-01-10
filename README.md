@@ -1,3 +1,21 @@
+ASAP
+============================
+
+This is the open-source code of "Slot-size Adaptation and Utility-based Packet Aggregation for IEEE 802.15.4e Time-Slotted Communication Networks," to appear in IEEE Internet of Things Journal.
+ASAP is implemented on Contiki-NG.
+
+When using this source code, please cite the following paper:
+
+Hongchan Kim, Geonhee Lee, Juhun Shin, Jeongyeup Paek, and Saewoong Bahk, "Slot-size Adaptation and Utility-based Packet Aggregation for IEEE 802.15.4e Time-Slotted Communication Networks," to appear in IEEE Internet of Things Journal.
+
+Main application files can be found in examples/ASAP/.
+1. udp-server.c contains operations of 6TiSCH/TSCH/RPL root node. It generates downlink traffic.
+2. udp-client.c contains operations of non-root node. It generates uplink traffic.
+3. project-conf.h introduces various experimental settings and parameters.
+4. node-info.[h, c] contain topology configuration.
+
+----------------------------
+
 <img src="https://github.com/contiki-ng/contiki-ng.github.io/blob/master/images/logo/Contiki_logo_2RGB.png" alt="Logo" width="256">
 
 # Contiki-NG: The OS for Next Generation IoT Devices
