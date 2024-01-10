@@ -22,7 +22,7 @@ uint16_t iotlab_nodes[NODE_NUM][3] = {
   {105, 0xb576, 0},
   {106, 0x9382, 0},
 //  {107, 0xa072, 0},
-  {108, 0x8477, 0},
+//  {108, 0x8477, 0}, Suspected
   {109, 0x1062, 0},
   {110, 0xa071, 0},
   {111, 0x9172, 0},
@@ -86,9 +86,11 @@ uint16_t iotlab_nodes[NODE_NUM][3] = {
   {171, 0x9379, 0},
   {172, 0x9678, 0},
   {173, 0x9381, 0},
-  {174, 0xa179, 0},
+  //{174, 0xa179, 0}, Suspected
   {175, 0xa870, 0},
-  {176, 0x9572, 0}
+  {176, 0x9572, 0},
+  {177, 0x3061, 0},
+  {178, 0xa281, 0}
 };
 #elif IOTLAB_SITE == IOTLAB_GRENOBLE_79_R_CORNER_U
 uint16_t iotlab_nodes[NODE_NUM][3] = {

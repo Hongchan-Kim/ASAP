@@ -319,6 +319,10 @@ PROCESS_THREAD(udp_client_process, ev, data)
         app_seqno = (1 << 28) + ((uint32_t)node_id << 16) + topology_opt_count;
         app_magic = (uint16_t)APP_DATA_MAGIC;
 
+#if APP_PAYLOAD_LEN_UNIFORM_RANDOM
+        current_payload_len = APP_PAYLOAD_LEN_MIN + random_rand() % APP_PAYLOAD_LEN_DIFF;
+#endif
+
         memcpy(app_payload + current_payload_len - sizeof(app_tx_up_asn) - sizeof(app_seqno) - sizeof(app_magic), 
               &app_tx_up_asn, sizeof(app_tx_up_asn));
         memcpy(app_payload + current_payload_len - sizeof(app_seqno) - sizeof(app_magic), &app_seqno, sizeof(app_seqno));
@@ -360,6 +364,10 @@ PROCESS_THREAD(udp_client_process, ev, data)
 
         app_seqno = (1 << 28) + ((uint32_t)node_id << 16) + traffic_opt_count;
         app_magic = (uint16_t)APP_DATA_MAGIC;
+
+#if APP_PAYLOAD_LEN_UNIFORM_RANDOM
+        current_payload_len = APP_PAYLOAD_LEN_MIN + random_rand() % APP_PAYLOAD_LEN_DIFF;
+#endif
 
         memcpy(app_payload + current_payload_len - sizeof(app_tx_up_asn) - sizeof(app_seqno) - sizeof(app_magic), 
               &app_tx_up_asn, sizeof(app_tx_up_asn));
@@ -424,6 +432,10 @@ PROCESS_THREAD(udp_client_process, ev, data)
 
 #if HCK_ASAP_EVAL_02_UPA_SINGLE_HOP
         current_payload_len = APP_PAYLOAD_LEN_MIN + (eval_01_count - 1) / NUM_OF_PACKETS_PER_EACH_APP_PAYLOAD_LEN;
+#endif
+
+#if APP_PAYLOAD_LEN_UNIFORM_RANDOM
+        current_payload_len = APP_PAYLOAD_LEN_MIN + random_rand() % APP_PAYLOAD_LEN_DIFF;
 #endif
 
         memcpy(app_payload + current_payload_len - sizeof(app_tx_up_asn) - sizeof(app_seqno) - sizeof(app_magic), 

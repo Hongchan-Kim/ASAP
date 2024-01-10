@@ -170,6 +170,11 @@
    - With UPA: Max in single hop: 79, Max in multi hop: ???
    - With ODP: ???
    */
+#define APP_PAYLOAD_LEN_MIN                        14
+#define APP_PAYLOAD_LEN_MAX                        63
+#define APP_PAYLOAD_LEN_DIFF                       (APP_PAYLOAD_LEN_MAX - APP_PAYLOAD_LEN_MIN + 1)
+#define APP_PAYLOAD_LEN_UNIFORM_RANDOM             0
+
 #define APP_PAYLOAD_LEN                            14 // Min len with App footer
 //#define APP_PAYLOAD_LEN                            86 // Max len of Orchestra/ALICE in single hop
 //#define APP_PAYLOAD_LEN                            69 // Max len of Orchestra/ALICE in multi hop
